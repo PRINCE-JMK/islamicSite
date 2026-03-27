@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Stories – Islamic Academy</title><link rel="stylesheet" href="css/style.css"/></head>
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Leaderboard – Islamic Academy</title><link rel="stylesheet" href="css/style.css"/></head>
 <body>
 <div class="particles"><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div></div>
 
@@ -37,25 +37,16 @@
   </div>
 
 <div class="page-content container">
-  <h1 class="section-title reveal">Islamic Stories</h1>
-  <p class="section-sub reveal">40 stories across 4 themes — tap a category to explore</p>
-
-  <!-- Category cards -->
-  <div class="features-grid reveal" id="story-category-cards">
-    <!-- JS renders category cards here -->
-  </div>
-
-  <!-- Back button (hidden by default) -->
-  <div id="story-back-row" style="display:none;margin-bottom:20px;" class="reveal">
-    <button class="btn-outline" onclick="showStoryCategories()" style="padding:10px 24px;font-size:14px;">← Back to Categories</button>
-    <h2 id="story-cat-title" style="font-family:var(--font-display);color:var(--gold);margin-top:12px;font-size:24px;"></h2>
-  </div>
-
-  <!-- Story list within a category -->
-  <div class="story-grid" id="story-grid" style="display:none;"></div>
+  <h1 class="section-title reveal">🏅 Leaderboard</h1>
+  <p class="section-sub reveal">Top quiz performers — compete and climb the ranks!</p>
+  
+  <!-- Your position -->
+  <div id="your-rank" class="glass-card text-center reveal mb-3" style="max-width:500px;margin-left:auto;margin-right:auto;"></div>
+  
+  <!-- Full leaderboard -->
+  <div id="leaderboard-full" style="max-width:650px;margin:0 auto;" class="reveal"></div>
 </div>
 
-<div class="modal-overlay" id="story-modal"><div class="modal-box" id="story-modal-box" style="max-width:560px;"></div></div>
 <footer><img src="assets/OFFICAL Logo.png" alt="Islamic Academy" class="footer-logo"/><p>&copy; 2025 Islamic Academy. All rights reserved.</p><p class="footer-love">Built with love for the sake of Allah ❤️</p></footer>
 <div class="modal-overlay" id="auth-modal"><div class="modal-box" id="auth-box"></div></div>
 <script src="js/script.js"></script>

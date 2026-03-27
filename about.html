@@ -8,15 +8,36 @@
 <body>
   <div class="particles"><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div></div>
 
-  <div class="navbar-wrap" id="navbar-wrap">
+    <div class="navbar-wrap" id="navbar-wrap">
     <nav class="navbar">
-      <a href="index.html" class="logo"><img src="assets/OFFICAL Logo.png" alt="Logo"/><span class="logo-text">Islamic Academy</span></a>
+      <a href="index.html" class="logo">
+        <img src="assets/OFFICAL Logo.png" alt="Islamic Academy Logo"/>
+        <span class="logo-text">Islamic Academy</span>
+      </a>
       <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">🏠 Home</a></li><li><a href="learn.html">📚 Learn</a></li><li><a href="stories.html">📖 Stories</a></li><li><a href="courses.html">🏆 Quizzes</a></li><li><a href="progress.html">📊 Progress</a></li><li><a href="forum.html">💬 Forum</a></li><li><a href="forum.html">💬 Forum</a><a href="about.html" class="active">ℹ️ About</a></li>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="learn.html">📚 Learn</a></li>
+        <li><a href="courses.html">🏆 Quizzes</a></li>
+        <li><a href="progress.html">📊 Progress</a></li>
+        <li><a href="community.html">💬 Community</a></li>
+        <li><a href="about.html">ℹ️ About</a></li>
       </ul>
-      <div style="display:flex;align-items:center;gap:10px;"><div id="auth-area"><button class="nav-auth-btn" onclick="openAuthModal('login')">Login / Register</button></div><button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button></div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div id="user-points-display" style="display:none;" class="nav-points"></div>
+        <div id="auth-area">
+          <button class="nav-auth-btn" onclick="openAuthModal('login')">Login / Register</button>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+      </div>
     </nav>
-    <div class="nav-mobile" id="nav-mobile"><a href="index.html">🏠 Home</a><a href="learn.html">📚 Learn</a><a href="stories.html">📖 Stories</a><a href="courses.html">🏆 Quizzes</a><a href="progress.html">📊 Progress</a><a href="forum.html">💬 Forum</a><a href="about.html" class="active">ℹ️ About</a></div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="index.html">🏠 Home</a>
+      <a href="learn.html">📚 Learn</a>
+      <a href="courses.html">🏆 Quizzes</a>
+      <a href="progress.html">📊 Progress</a>
+      <a href="community.html">💬 Community</a>
+      <a href="about.html">ℹ️ About</a>
+    </div>
   </div>
 
   <div class="page-content container">

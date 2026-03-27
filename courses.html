@@ -3,39 +3,101 @@
 <head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Quizzes – Islamic Academy</title><link rel="stylesheet" href="css/style.css"/></head>
 <body>
 <div class="particles"><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div></div>
-<div class="navbar-wrap" id="navbar-wrap"><nav class="navbar"><a href="index.html" class="logo"><img src="assets/OFFICAL Logo.png" alt="Logo"/><span class="logo-text">Islamic Academy</span></a><ul class="nav-links" id="nav-links"><li><a href="index.html">🏠 Home</a></li><li><a href="learn.html">📚 Learn</a></li><li><a href="stories.html">📖 Stories</a></li><li><a href="courses.html" class="active">🏆 Quizzes</a></li><li><a href="progress.html">📊 Progress</a></li><li><a href="forum.html">💬 Forum</a></li><li><a href="about.html">ℹ️ About</a></li></ul><div style="display:flex;align-items:center;gap:10px;"><div id="auth-area"><button class="nav-auth-btn" onclick="openAuthModal('login')">Login / Register</button></div><button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button></div></nav><div class="nav-mobile" id="nav-mobile"><a href="index.html">🏠 Home</a><a href="learn.html">📚 Learn</a><a href="stories.html">📖 Stories</a><a href="courses.html" class="active">🏆 Quizzes</a><a href="progress.html">📊 Progress</a><a href="forum.html">💬 Forum</a><a href="about.html">ℹ️ About</a></div></div>
+
+  <div class="navbar-wrap" id="navbar-wrap">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/OFFICAL Logo.png" alt="Islamic Academy Logo"/>
+        <span class="logo-text">Islamic Academy</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="learn.html">📚 Learn</a></li>
+        <li><a href="courses.html">🏆 Quizzes</a></li>
+        <li><a href="progress.html">📊 Progress</a></li>
+        <li><a href="community.html">💬 Community</a></li>
+        <li><a href="about.html">ℹ️ About</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div id="user-points-display" style="display:none;" class="nav-points"></div>
+        <div id="auth-area">
+          <button class="nav-auth-btn" onclick="openAuthModal('login')">Login / Register</button>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+      </div>
+    </nav>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="index.html">🏠 Home</a>
+      <a href="learn.html">📚 Learn</a>
+      <a href="courses.html">🏆 Quizzes</a>
+      <a href="progress.html">📊 Progress</a>
+      <a href="community.html">💬 Community</a>
+      <a href="about.html">ℹ️ About</a>
+    </div>
+  </div>
 
 <div class="page-content container">
   <h1 class="section-title reveal">Quizzes & Challenges</h1>
-  <p class="section-sub reveal">6 topics · 10 questions each · Earn your place on the leaderboard!</p>
+  <p class="section-sub reveal">Choose a topic or try Random Mode!</p>
+
+  <!-- Random Quiz Mode Card -->
+  <div class="glass-card reveal text-center mb-3" id="random-quiz-card" style="max-width:600px;margin-left:auto;margin-right:auto;border:2px solid rgba(255,215,0,0.2);">
+    <div style="font-size:48px;margin-bottom:12px;">🎲</div>
+    <h3 style="color:var(--gold);font-family:var(--font-display);margin-bottom:8px;">Random Quiz Mode</h3>
+    <p style="color:var(--text-muted);margin-bottom:16px;">Questions pulled randomly from all topics</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;">
+      <button class="btn-outline random-count active" data-count="10" onclick="selectRandomCount(this,10)" style="padding:8px 20px;">10 Questions</button>
+      <button class="btn-outline random-count" data-count="15" onclick="selectRandomCount(this,15)" style="padding:8px 20px;">15 Questions</button>
+      <button class="btn-outline random-count" data-count="20" onclick="selectRandomCount(this,20)" style="padding:8px 20px;">20 Questions</button>
+    </div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;">
+      <button class="btn-outline quiz-mode-btn active" data-mode="learning" onclick="selectQuizMode(this,'learning')" style="padding:8px 20px;">📖 Learning Mode</button>
+      <button class="btn-outline quiz-mode-btn" data-mode="test" onclick="selectQuizMode(this,'test')" style="padding:8px 20px;">⏱️ Test Mode</button>
+    </div>
+    <p id="mode-desc" style="color:var(--text-dim);font-size:13px;margin-bottom:16px;">Explanations shown after each question</p>
+    <button class="btn-primary" onclick="startRandomQuiz()">Start Random Quiz 🎲</button>
+  </div>
+
+  <h2 class="section-title reveal mt-4" style="font-size:24px;">Or Choose a Topic</h2>
   <div class="quiz-grid" id="quiz-grid"></div>
+
+  <!-- Quiz Runner -->
   <div class="quiz-runner" id="quiz-runner" style="display:none;">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
       <h2 style="color:var(--gold);font-family:var(--font-display);margin:0;" id="qr-title">Quiz</h2>
-      <button class="btn-full danger-soft" style="width:auto;padding:8px 20px;font-size:13px;margin:0;" onclick="exitQuiz()">Exit</button>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span id="qr-streak" style="display:none;color:var(--gold);font-weight:800;font-size:14px;"></span>
+        <button class="btn-full danger-soft" style="width:auto;padding:8px 20px;font-size:13px;margin:0;" onclick="exitQuiz()">Exit</button>
+      </div>
     </div>
     <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="qr-bar"></div></div>
     <div class="quiz-question-card">
+      <!-- Story context before question -->
+      <div id="qr-story-context" style="display:none;padding:14px;background:rgba(255,215,0,0.05);border-radius:12px;margin-bottom:16px;border-left:3px solid rgba(255,215,0,0.3);"></div>
       <p style="color:rgba(255,215,0,0.5);font-size:13px;font-weight:700;margin-bottom:4px;" id="qr-counter"></p>
       <p class="quiz-q-text" id="qr-question"></p>
       <div class="quiz-options" id="qr-options"></div>
+      <div id="qr-explain" style="display:none;"></div>
       <button class="btn-full" id="qr-next" style="display:none;" onclick="quizNext()">Next →</button>
     </div>
   </div>
+
+  <!-- Quiz Result -->
   <div class="quiz-result-card" id="quiz-result" style="display:none;">
     <div class="quiz-result-icon" id="qr-result-icon">🏆</div>
     <h2 style="color:var(--gold);font-family:var(--font-display);margin:12px 0 4px;" id="qr-result-msg"></h2>
     <p class="quiz-result-pct" id="qr-result-pct"></p>
-    <p style="color:var(--text-muted);margin-bottom:28px;" id="qr-result-detail"></p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;"><button class="btn-primary" onclick="retryQuiz()">Retry</button><button class="btn-outline" onclick="exitQuiz()">Back</button></div>
+    <p style="color:var(--text-muted);margin-bottom:12px;" id="qr-result-detail"></p>
+    <p id="qr-result-streak" style="color:var(--gold);font-weight:700;margin-bottom:20px;display:none;"></p>
+    <!-- Test mode: show all answers -->
+    <div id="qr-test-review" style="display:none;max-width:600px;margin:0 auto 24px;text-align:left;"></div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn-primary" onclick="retryQuiz()">Retry</button>
+      <button class="btn-outline" onclick="exitQuiz()">Back to Quizzes</button>
+    </div>
   </div>
-  <!-- Leaderboard -->
-  <section id="leaderboard-section" class="mt-5 reveal">
-    <h2 class="section-title" style="font-size:28px;">🏅 Leaderboard</h2>
-    <p class="section-sub">Top quiz scores — compete with your friends!</p>
-    <div id="leaderboard-list" style="max-width:600px;margin:0 auto;"></div>
-  </section>
 </div>
+
 <footer><img src="assets/OFFICAL Logo.png" alt="Islamic Academy" class="footer-logo"/><p>&copy; 2025 Islamic Academy. All rights reserved.</p><p class="footer-love">Built with love for the sake of Allah ❤️</p></footer>
 <div class="modal-overlay" id="auth-modal"><div class="modal-box" id="auth-box"></div></div>
 <script src="js/script.js"></script>
