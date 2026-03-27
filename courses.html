@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Quizzes – Islamic Academy</title><link rel="stylesheet" href="css/style.css"/></head>
+<body>
+<div class="particles"><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div></div>
+<div class="navbar-wrap" id="navbar-wrap"><nav class="navbar"><a href="index.html" class="logo"><img src="assets/OFFICAL Logo.png" alt="Logo"/><span class="logo-text">Islamic Academy</span></a><ul class="nav-links" id="nav-links"><li><a href="index.html">🏠 Home</a></li><li><a href="learn.html">📚 Learn</a></li><li><a href="stories.html">📖 Stories</a></li><li><a href="courses.html" class="active">🏆 Quizzes</a></li><li><a href="progress.html">📊 Progress</a></li><li><a href="forum.html">💬 Forum</a></li><li><a href="about.html">ℹ️ About</a></li></ul><div style="display:flex;align-items:center;gap:10px;"><div id="auth-area"><button class="nav-auth-btn" onclick="openAuthModal('login')">Login / Register</button></div><button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button></div></nav><div class="nav-mobile" id="nav-mobile"><a href="index.html">🏠 Home</a><a href="learn.html">📚 Learn</a><a href="stories.html">📖 Stories</a><a href="courses.html" class="active">🏆 Quizzes</a><a href="progress.html">📊 Progress</a><a href="forum.html">💬 Forum</a><a href="about.html">ℹ️ About</a></div></div>
+
+<div class="page-content container">
+  <h1 class="section-title reveal">Quizzes & Challenges</h1>
+  <p class="section-sub reveal">6 topics · 10 questions each · Earn your place on the leaderboard!</p>
+  <div class="quiz-grid" id="quiz-grid"></div>
+  <div class="quiz-runner" id="quiz-runner" style="display:none;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+      <h2 style="color:var(--gold);font-family:var(--font-display);margin:0;" id="qr-title">Quiz</h2>
+      <button class="btn-full danger-soft" style="width:auto;padding:8px 20px;font-size:13px;margin:0;" onclick="exitQuiz()">Exit</button>
+    </div>
+    <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="qr-bar"></div></div>
+    <div class="quiz-question-card">
+      <p style="color:rgba(255,215,0,0.5);font-size:13px;font-weight:700;margin-bottom:4px;" id="qr-counter"></p>
+      <p class="quiz-q-text" id="qr-question"></p>
+      <div class="quiz-options" id="qr-options"></div>
+      <button class="btn-full" id="qr-next" style="display:none;" onclick="quizNext()">Next →</button>
+    </div>
+  </div>
+  <div class="quiz-result-card" id="quiz-result" style="display:none;">
+    <div class="quiz-result-icon" id="qr-result-icon">🏆</div>
+    <h2 style="color:var(--gold);font-family:var(--font-display);margin:12px 0 4px;" id="qr-result-msg"></h2>
+    <p class="quiz-result-pct" id="qr-result-pct"></p>
+    <p style="color:var(--text-muted);margin-bottom:28px;" id="qr-result-detail"></p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;"><button class="btn-primary" onclick="retryQuiz()">Retry</button><button class="btn-outline" onclick="exitQuiz()">Back</button></div>
+  </div>
+  <!-- Leaderboard -->
+  <section id="leaderboard-section" class="mt-5 reveal">
+    <h2 class="section-title" style="font-size:28px;">🏅 Leaderboard</h2>
+    <p class="section-sub">Top quiz scores — compete with your friends!</p>
+    <div id="leaderboard-list" style="max-width:600px;margin:0 auto;"></div>
+  </section>
+</div>
+<footer><img src="assets/OFFICAL Logo.png" alt="Islamic Academy" class="footer-logo"/><p>&copy; 2025 Islamic Academy. All rights reserved.</p><p class="footer-love">Built with love for the sake of Allah ❤️</p></footer>
+<div class="modal-overlay" id="auth-modal"><div class="modal-box" id="auth-box"></div></div>
+<script src="js/script.js"></script>
+</body></html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Stories – Islamic Academy</title><link rel="stylesheet" href="css/style.css"/></head>
+<body>
+<div class="particles"><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div></div>
+<div class="navbar-wrap" id="navbar-wrap"><nav class="navbar"><a href="index.html" class="logo"><img src="assets/OFFICAL Logo.png" alt="Logo"/><span class="logo-text">Islamic Academy</span></a><ul class="nav-links" id="nav-links"><li><a href="index.html">🏠 Home</a></li><li><a href="learn.html">📚 Learn</a></li><li><a href="stories.html" class="active">📖 Stories</a></li><li><a href="courses.html">🏆 Quizzes</a></li><li><a href="progress.html">📊 Progress</a></li><li><a href="forum.html">💬 Forum</a></li><li><a href="about.html">ℹ️ About</a></li></ul><div style="display:flex;align-items:center;gap:10px;"><div id="auth-area"><button class="nav-auth-btn" onclick="openAuthModal('login')">Login / Register</button></div><button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button></div></nav><div class="nav-mobile" id="nav-mobile"><a href="index.html">🏠 Home</a><a href="learn.html">📚 Learn</a><a href="stories.html" class="active">📖 Stories</a><a href="courses.html">🏆 Quizzes</a><a href="progress.html">📊 Progress</a><a href="forum.html">💬 Forum</a><a href="about.html">ℹ️ About</a></div></div>
+
+<div class="page-content container">
+  <h1 class="section-title reveal">Islamic Stories</h1>
+  <p class="section-sub reveal">Beautiful stories of mercy, wisdom, and faith — 40 stories across 4 categories</p>
+  <div class="text-center mb-3 reveal">
+    <select id="story-cat-select" style="padding:10px 20px;border-radius:12px;border:2px solid rgba(255,215,0,0.3);background:rgba(255,255,255,0.08);color:var(--gold);font-family:var(--font-body);font-size:15px;font-weight:700;cursor:pointer;outline:none;"></select>
+  </div>
+  <div class="story-grid" id="story-grid"></div>
+</div>
+<div class="modal-overlay" id="story-modal"><div class="modal-box" id="story-modal-box" style="max-width:560px;"></div></div>
+<footer><img src="assets/OFFICAL Logo.png" alt="Islamic Academy" class="footer-logo"/><p>&copy; 2025 Islamic Academy. All rights reserved.</p><p class="footer-love">Built with love for the sake of Allah ❤️</p></footer>
+<div class="modal-overlay" id="auth-modal"><div class="modal-box" id="auth-box"></div></div>
+<script src="js/script.js"></script>
+</body></html>

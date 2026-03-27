@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Learn – Islamic Academy</title><link rel="stylesheet" href="css/style.css"/></head>
+<body>
+<div class="particles"><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div></div>
+<div class="navbar-wrap" id="navbar-wrap"><nav class="navbar"><a href="index.html" class="logo"><img src="assets/OFFICAL Logo.png" alt="Logo"/><span class="logo-text">Islamic Academy</span></a><ul class="nav-links" id="nav-links"><li><a href="index.html">🏠 Home</a></li><li><a href="learn.html" class="active">📚 Learn</a></li><li><a href="stories.html">📖 Stories</a></li><li><a href="courses.html">🏆 Quizzes</a></li><li><a href="progress.html">📊 Progress</a></li><li><a href="forum.html">💬 Forum</a></li><li><a href="about.html">ℹ️ About</a></li></ul><div style="display:flex;align-items:center;gap:10px;"><div id="auth-area"><button class="nav-auth-btn" onclick="openAuthModal('login')">Login / Register</button></div><button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button></div></nav><div class="nav-mobile" id="nav-mobile"><a href="index.html">🏠 Home</a><a href="learn.html" class="active">📚 Learn</a><a href="stories.html">📖 Stories</a><a href="courses.html">🏆 Quizzes</a><a href="progress.html">📊 Progress</a><a href="forum.html">💬 Forum</a><a href="about.html">ℹ️ About</a></div></div>
+
+<div class="page-content container">
+  <h1 class="section-title reveal">Learn & Grow</h1>
+  <p class="section-sub reveal">Choose your learning path</p>
+  <div class="learn-tabs reveal">
+    <button class="learn-tab active" data-tab="memorise"><span class="tab-icon">🕋</span> Memorise Surahs</button>
+    <button class="learn-tab" data-tab="hadith"><span class="tab-icon">📜</span> Hadith Study</button>
+    <button class="learn-tab" data-tab="prep"><span class="tab-icon">📝</span> Quiz Preparation</button>
+    <button class="learn-tab" data-tab="videos"><span class="tab-icon">🎬</span> Revision Videos</button>
+  </div>
+  <div class="learn-panel active" id="panel-memorise"><div class="surah-grid" id="surah-grid"></div></div>
+  <div class="learn-panel" id="panel-hadith"><div class="hadith-study-card" id="hadith-study-card"></div><div class="hadith-nav-dots" id="hadith-nav-dots"></div></div>
+  <div class="learn-panel" id="panel-prep"><h3 class="text-gold mb-3" style="font-family:var(--font-display);text-align:center;">Review answers before taking quizzes</h3><div class="features-grid" id="quiz-prep-grid"></div></div>
+  <div class="learn-panel" id="panel-videos"><div class="video-grid" id="revision-videos"></div></div>
+</div>
+<div class="modal-overlay" id="surah-modal"><div class="modal-box" id="surah-modal-box" style="max-width:560px;"></div></div>
+<footer><img src="assets/OFFICAL Logo.png" alt="Islamic Academy" class="footer-logo"/><p>&copy; 2025 Islamic Academy. All rights reserved.</p><p class="footer-love">Built with love for the sake of Allah ❤️</p></footer>
+<div class="modal-overlay" id="auth-modal"><div class="modal-box" id="auth-box"></div></div>
+<script src="js/script.js"></script>
+</body></html>

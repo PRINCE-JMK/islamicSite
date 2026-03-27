@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Islamic Academy – Home</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- Floating particles -->
+  <div class="particles">
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+  </div>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <div class="navbar-wrap" id="navbar-wrap">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/OFFICAL Logo.png" alt="Islamic Academy Logo"/>
+        <span class="logo-text">Islamic Academy</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">🏠 Home</a></li>
+        <li><a href="learn.html">📚 Learn</a></li>
+        <li><a href="stories.html">📖 Stories</a></li>
+        <li><a href="courses.html">🏆 Quizzes</a></li>
+        <li><a href="progress.html">📊 Progress</a></li>
+        <li><a href="forum.html">💬 Forum</a></li><li><a href="forum.html">💬 Forum</a><a href="about.html">ℹ️ About</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div id="auth-area">
+          <button class="nav-auth-btn" onclick="openAuthModal('login')">Login / Register</button>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+      </div>
+    </nav>
+    <!-- Mobile menu -->
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="index.html" class="active">🏠 Home</a>
+      <a href="learn.html">📚 Learn</a>
+      <a href="stories.html">📖 Stories</a>
+      <a href="courses.html">🏆 Quizzes</a>
+      <a href="progress.html">📊 Progress</a>
+      <a href="forum.html">💬 Forum</a><a href="about.html">ℹ️ About</a>
+    </div>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <img src="assets/OFFICAL Logo.png" alt="Islamic Academy" class="hero-logo reveal"/>
+    <h1 class="reveal reveal-delay-1">Welcome to<br><span class="gold-grad">Islamic Academy</span></h1>
+    <p class="hero-sub reveal reveal-delay-2">
+      A beautiful journey through the Qur'an, the life of Prophet Muhammad ﷺ, and the rich tapestry of Islamic knowledge — designed for young hearts and curious minds.
+    </p>
+    <div class="hero-btns reveal reveal-delay-3">
+      <a href="learn.html" class="btn-primary">Start Learning ✨</a>
+      <button class="btn-outline" id="hero-join-btn" onclick="openAuthModal('register')">Join Free 🌟</button>
+    </div>
+  </section>
+
+  <!-- ═══ HADITH OF THE DAY ═══ -->
+  <section class="hadith-section reveal">
+    <div class="hadith-card">
+      <p class="hadith-label">☆ Hadith of the Day ☆</p>
+      <p class="hadith-text" id="hadith-text"><em>Loading…</em></p>
+      <p class="hadith-source" id="hadith-source"></p>
+    </div>
+  </section>
+
+  <!-- ═══ VIDEO SHOWCASE ═══ -->
+  <section class="container mt-5 reveal">
+    <h2 class="section-title">Witness the Beauty of Islam</h2>
+    <p class="section-sub">These gatherings of faith move hearts across the world</p>
+    <div class="video-grid">
+      <div class="video-card reveal reveal-delay-1">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/hzM3KN6j7kQ?rel=0" title="Islamic Video 1" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-info">
+          <h4>The Beauty of Islam</h4>
+          <p>A moving glimpse into the faith</p>
+        </div>
+      </div>
+      <div class="video-card reveal reveal-delay-2">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/f6Oyji5hnAg?rel=0" title="Islamic Video 2" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-info">
+          <h4>Inspiring Moments</h4>
+          <p>Scenes that touch the heart and soul</p>
+        </div>
+      </div>
+      <div class="video-card reveal reveal-delay-3">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/KBxLeBvIWmg?rel=0" title="Islamic Video 3" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-info">
+          <h4>Unity in Prayer</h4>
+          <p>Witnessing the power of collective worship</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FEATURES GRID ═══ -->
+  <section class="container mt-5 reveal">
+    <h2 class="section-title">Your Path to Knowledge</h2>
+    <p class="section-sub">Explore everything Islamic Academy has to offer</p>
+    <div class="features-grid">
+      <a href="learn.html" class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">📖</div>
+        <h3>Hadith Memorisation</h3>
+        <p>Learn beautiful sayings of the Prophet ﷺ with daily selections</p>
+      </a>
+      <a href="stories.html" class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">🕋</div>
+        <h3>Stories of the Prophet</h3>
+        <p>Inspiring stories from the life of Muhammad ﷺ</p>
+      </a>
+      <a href="courses.html" class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon">🏆</div>
+        <h3>Fun Quizzes</h3>
+        <p>Test your knowledge and track your progress</p>
+      </a>
+      <a href="learn.html" class="feature-card reveal reveal-delay-4">
+        <div class="feature-icon">🎬</div>
+        <h3>Revision Videos</h3>
+        <p>Watch and learn with curated educational content</p>
+      </a>
+      <a href="progress.html" class="feature-card reveal reveal-delay-5">
+        <div class="feature-icon">📊</div>
+        <h3>Track Progress</h3>
+        <p>See how far you've come on your learning journey</p>
+      </a>
+      <a href="learn.html" class="feature-card reveal reveal-delay-5">
+        <div class="feature-icon">🌙</div>
+        <h3>Daily Inspiration</h3>
+        <p>Start each day with wisdom from the Qur'an and Sunnah</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="container mt-5 text-center reveal" style="padding-bottom:80px;">
+    <h2 class="section-title">Begin Your Journey Today</h2>
+    <p style="color:var(--text-muted);max-width:500px;margin:0 auto 24px;font-size:16px;">
+      Knowledge is light — let it illuminate your path.
+    </p>
+    <a href="learn.html" class="btn-primary">Explore Lessons ✨</a>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <img src="assets/OFFICAL Logo.png" alt="Islamic Academy" class="footer-logo"/>
+    <p>&copy; 2025 Islamic Academy. All rights reserved.</p>
+    <p class="footer-love">Built with love for the sake of Allah ❤️</p>
+  </footer>
+
+  <!-- ═══ AUTH MODAL ═══ -->
+  <div class="modal-overlay" id="auth-modal">
+    <div class="modal-box" id="auth-box">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
