@@ -33,7 +33,7 @@ const MEMORISATION_SURAHS=[
 
 const REVISION_VIDEOS=[
 {id:1,title:"Islamic Knowledge",ytId:"lNIsdNxsOGc",desc:"Strengthen your understanding of the deen"},
-{id:2,title:"Quran & Reflection",ytId:"brtVQDXde-s",desc:"Recitation and contemplation"},
+{id:2,title:"Quran & Reflection",ytId:"_bjK1bQFXkI",desc:"Recitation and contemplation"},
 {id:3,title:"Learning the Basics",ytId:"WEEORXFj-lo",desc:"Essential foundations every Muslim should know"},
 {id:4,title:"Faith & Inspiration",ytId:"zalLv2NY98k",desc:"Reminders that bring you closer to Allah"}
 ];
